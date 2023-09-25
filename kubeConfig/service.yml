@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service-talk-to-kube-spring-hello
+  namespace: kube-spring-namespace
+spec:
+  selector:
+    app: talk-to-kube-spring-hello
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090

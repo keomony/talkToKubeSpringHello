@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: talk-to-kube-spring-hello-deployment
+  namespace: kube-spring-namespace
+  labels:
+    app: talk-to-kube-spring-hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: talk-to-kube-spring-hello
+  template:
+    metadata:
+      labels:
+        app: talk-to-kube-spring-hello
+    spec:
+      containers:
+        - name: talk-to-kube-spring-hello
+          image: keomonykhun/talktokubespringhello:0.0.5
+          ports:
+            - containerPort: 9090
+          env:
+            - name: API_URL
+              value: "http://my-service-kube-spring-hello.default"
