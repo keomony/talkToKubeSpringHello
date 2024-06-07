@@ -14,7 +14,7 @@ spec:
 
 Service will select one of the pods which has label app: `talk-to-kube-spring-hello` and that pod has port:9090 to forward the traffic to.
 `port: 80` is the port of the service. This is the port of the service that it exposes to the outside world.
-`port:9090` is the port of the pod/container. This is the port of the pod that it exposes to the service.
+`targetPort:9090` is the port of the pod/container. This is the port of the pod that it exposes to the service.
 
 When one deployment wants to talk to another, the deployment needs to talk to another by a service name.
 

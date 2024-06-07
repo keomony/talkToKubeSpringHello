@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: talk-to-kube-spring-hello
-          image: keomonykhun/talktokubespringhello:0.0.5
+          image: keomoonie/talktokubespringhello:0.0.1
           ports:
             - containerPort: 9090
           env:
